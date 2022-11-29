@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:paddingLeft="30dp"
+    android:paddingRight="20dp"
+    android:gravity="center_vertical">
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="18dp"
+        android:layout_height="18dp"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="15sp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:textColor="#333333"
+        android:text="United Kingdom"
+        android:layout_marginLeft="15dp" />
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_download"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/download"/>
+</androidx.appcompat.widget.LinearLayoutCompat>
