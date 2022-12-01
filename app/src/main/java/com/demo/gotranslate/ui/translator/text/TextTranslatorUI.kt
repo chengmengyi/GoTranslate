@@ -72,7 +72,7 @@ class TextTranslatorUI: BaseUI(R.layout.activity_text_translator){
         setLanguageInfo()
         tv_top_content.text=bottom
         tv_bottom_content.text=""
-        translate(bottom)
+        translate(bottom,change = true)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -95,7 +95,7 @@ class TextTranslatorUI: BaseUI(R.layout.activity_text_translator){
         }
     }
 
-    private fun translate(content: String) {
+    private fun translate(content: String,change:Boolean=false) {
         if(content.isEmpty()){
             return
         }
@@ -108,7 +108,9 @@ class TextTranslatorUI: BaseUI(R.layout.activity_text_translator){
                 showToast("translate fail")
             }else{
                 tv_bottom_content.text=it
-                showOpenAd.showOpenAd {  }
+                if (!change){
+                    showOpenAd.showOpenAd {  }
+                }
             }
         }
     }

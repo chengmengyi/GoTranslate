@@ -19,6 +19,17 @@ object GoConfig {
             "go_type": "kaiping",
             "go_sort": 1
         },
+
+{
+
+            "go_source": "admob",
+            "go_id": "ca-app-pub-3940256099942544/1001001001",
+            "go_type": "kaiping",
+            "go_sort": 3
+},
+
+
+
         {
             "go_source": "admob",
             "go_id": "ca-app-pub-3940256099942544/3419835294A",
@@ -38,20 +49,38 @@ object GoConfig {
             "go_id": "ca-app-pub-3940256099942544/2247696110A",
             "go_type": "yuansheng",
             "go_sort": 3
+        },
+
+    {
+            "go_source": "admob",
+            "go_id": "ca-app-pub-3940256099942544/2247696110A",
+            "go_type": "yuansheng",
+            "go_sort": 2
         }
+
+
+
+
     ],
     "go_write_home": [
         {
             "go_source": "admob",
             "go_id": "ca-app-pub-3940256099942544/2247696110",
             "go_type": "yuansheng",
-            "go_sort": 2
+            "go_sort": 1
+        },
+
+ {
+            "go_source": "admob",
+            "go_id": "ca-app-pub-3940256099942544/1001001001",
+            "go_type": "yuansheng",
+            "go_sort": 3
         },
         {
             "go_source": "admob",
             "go_id": "ca-app-pub-3940256099942544/2247696110A",
             "go_type": "yuansheng",
-            "go_sort": 3
+            "go_sort": 2
         }
     ],
       "go_translate": [

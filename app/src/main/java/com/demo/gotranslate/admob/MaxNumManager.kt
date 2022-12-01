@@ -1,5 +1,6 @@
 package com.demo.gotranslate.admob
 
+import android.util.Log
 import com.tencent.mmkv.MMKV
 import org.json.JSONObject
 import java.lang.Exception

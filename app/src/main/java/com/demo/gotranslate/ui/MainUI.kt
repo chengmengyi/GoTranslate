@@ -26,6 +26,7 @@ class MainUI : BaseUI(R.layout.activity_main) {
         LoadAdImpl.loadAd(GoConfig.GO_OPEN)
         LoadAdImpl.loadAd(GoConfig.GO_HOME)
         LoadAdImpl.loadAd(GoConfig.GO_TRANSLATE)
+        LoadAdImpl.loadAd(GoConfig.GO_WRITE_HOME)
     }
 
     private fun startAnimator(){
