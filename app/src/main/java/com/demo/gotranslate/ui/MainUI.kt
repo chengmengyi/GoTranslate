@@ -7,25 +7,47 @@ import android.view.animation.LinearInterpolator
 import androidx.core.animation.doOnEnd
 import com.blankj.utilcode.util.ActivityUtils
 import com.demo.gotranslate.R
+import com.demo.gotranslate.admob.LoadAdImpl
+import com.demo.gotranslate.admob.ShowOpenAd
 import com.demo.gotranslate.base.BaseUI
+import com.demo.gotranslate.config.GoConfig
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainUI : BaseUI(R.layout.activity_main) {
     private var animator:ValueAnimator?=null
+    private val showOpenAd by lazy { ShowOpenAd(this,GoConfig.GO_OPEN){ toHomeUI() } }
 
     override fun view() {
+        preLoadAd()
         startAnimator()
+    }
+
+    private fun preLoadAd(){
+        LoadAdImpl.loadAd(GoConfig.GO_OPEN)
+        LoadAdImpl.loadAd(GoConfig.GO_HOME)
+        LoadAdImpl.loadAd(GoConfig.GO_TRANSLATE)
     }
 
     private fun startAnimator(){
         animator=ValueAnimator.ofInt(0, 100).apply {
-            duration = 3000L
+            duration = 10000L
             interpolator = LinearInterpolator()
             addUpdateListener {
                 val progress = it.animatedValue as Int
                 progress_view.progress = progress
+                val pro = (10 * (progress / 100.0F)).toInt()
+                if (pro in 2..9){
+                    showOpenAd.showOpenAd{ b->
+                        progress_view.progress = 100
+                        stopAnimator()
+                        if(b){
+                            toHomeUI()
+                        }
+                    }
+                }else if (pro>=10){
+                    toHomeUI()
+                }
             }
-            doOnEnd { toHomeUI() }
             start()
         }
     }

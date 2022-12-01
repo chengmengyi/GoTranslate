@@ -181,4 +181,11 @@
                 android:textColor="#333333" />
         </androidx.core.widget.NestedScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:layout_margin="20dp"
+        layout="@layout/native_translate_home"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

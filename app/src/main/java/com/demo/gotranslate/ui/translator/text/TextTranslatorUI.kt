@@ -3,16 +3,23 @@ package com.demo.gotranslate.ui.translator.text
 import android.annotation.SuppressLint
 import android.content.Intent
 import com.demo.gotranslate.R
+import com.demo.gotranslate.admob.RefreshAdManager
+import com.demo.gotranslate.admob.ShowNativeAd
+import com.demo.gotranslate.admob.ShowOpenAd
 import com.demo.gotranslate.app.copyResult
 import com.demo.gotranslate.app.shareResult
 import com.demo.gotranslate.app.showToast
 import com.demo.gotranslate.base.BaseUI
+import com.demo.gotranslate.config.GoConfig
 import com.demo.gotranslate.manager.LanguageManager
 import com.demo.gotranslate.ui.dialog.TranslatingDialog
 import com.demo.gotranslate.ui.translator.LanguageUI
 import kotlinx.android.synthetic.main.activity_text_translator.*
 
 class TextTranslatorUI: BaseUI(R.layout.activity_text_translator){
+    private val showNativeAd by lazy { ShowNativeAd(this,GoConfig.GO_WRITE_HOME) }
+    private val showOpenAd by lazy {  ShowOpenAd(this,GoConfig.GO_TRANSLATE){} }
+
     override fun view() {
         immersionBar.statusBarView(view).init()
         setLanguageInfo()
@@ -101,6 +108,7 @@ class TextTranslatorUI: BaseUI(R.layout.activity_text_translator){
                 showToast("translate fail")
             }else{
                 tv_bottom_content.text=it
+                showOpenAd.showOpenAd {  }
             }
         }
     }
@@ -108,5 +116,14 @@ class TextTranslatorUI: BaseUI(R.layout.activity_text_translator){
     override fun onResume() {
         super.onResume()
         setLanguageInfo()
+        if(RefreshAdManager.canRefresh(GoConfig.GO_WRITE_HOME)){
+            showNativeAd.showAd()
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        showNativeAd.stopShow()
+        RefreshAdManager.reset(GoConfig.GO_WRITE_HOME)
     }
 }

@@ -4,14 +4,13 @@ import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.net.ConnectivityManager
 import android.net.Uri
 import android.util.DisplayMetrics
 import android.util.Log
 import android.view.View
 import android.widget.Toast
-import com.demo.gotranslate.manager.GoConfig
+import com.demo.gotranslate.config.GoConfig
 
 
 fun logGo(string: String){

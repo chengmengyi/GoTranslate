@@ -5,6 +5,7 @@
       <map>
         <entry key="app/src/main/res/drawable/bg_00_18dp.xml" value="0.29384615384615387" />
         <entry key="app/src/main/res/drawable/bg_45000000_18dp.xml" value="0.29384615384615387" />
+        <entry key="app/src/main/res/drawable/bg_ad_tag.xml" value="0.29384615384615387" />
         <entry key="app/src/main/res/drawable/bg_c7da00_12dp.xml" value="0.2984375" />
         <entry key="app/src/main/res/drawable/bg_camera_btn.xml" value="0.29384615384615387" />
         <entry key="app/src/main/res/drawable/bg_ff7f00_18dp.xml" value="0.2984375" />
@@ -13,6 +14,7 @@
         <entry key="app/src/main/res/drawable/bg_ffbf00_12dp.xml" value="0.2984375" />
         <entry key="app/src/main/res/drawable/bg_ffffff_10dp.xml" value="0.2984375" />
         <entry key="app/src/main/res/drawable/bg_ffffff_16dp.xml" value="0.2984375" />
+        <entry key="app/src/main/res/drawable/bg_ffffff_8dp.xml" value="0.29384615384615387" />
         <entry key="app/src/main/res/drawable/bg_translating.xml" value="0.29384615384615387" />
         <entry key="app/src/main/res/drawable/main_progress.xml" value="0.2984375" />
         <entry key="app/src/main/res/layout/activity_camera.xml" value="0.22056159420289856" />
@@ -27,6 +29,8 @@
         <entry key="app/src/main/res/layout/activity_web.xml" value="0.22056159420289856" />
         <entry key="app/src/main/res/layout/dialog_translating.xml" value="0.22056159420289856" />
         <entry key="app/src/main/res/layout/item_language.xml" value="0.22735507246376813" />
+        <entry key="app/src/main/res/layout/native_home.xml" value="0.2611389757715161" />
+        <entry key="app/src/main/res/layout/native_translate_home.xml" value="0.25" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2984375" />
       </map>
     </option>

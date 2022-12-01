@@ -7,10 +7,13 @@ import android.view.Gravity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.demo.gotranslate.R
+import com.demo.gotranslate.admob.RefreshAdManager
+import com.demo.gotranslate.admob.ShowNativeAd
 import com.demo.gotranslate.app.logGo
 import com.demo.gotranslate.app.openEmail
 import com.demo.gotranslate.app.showToast
 import com.demo.gotranslate.base.BaseUI
+import com.demo.gotranslate.config.GoConfig
 import com.demo.gotranslate.ui.translator.camera.CameraUI
 import com.demo.gotranslate.ui.translator.text.TextTranslatorUI
 import kotlinx.android.synthetic.main.activity_home.*
@@ -18,6 +21,8 @@ import kotlinx.android.synthetic.main.activity_home_content.*
 import kotlinx.android.synthetic.main.activity_home_drawer.*
 
 class HomeUI:BaseUI(R.layout.activity_home) {
+    private val showNativeAd by lazy { ShowNativeAd(this,GoConfig.GO_HOME) }
+
     override fun view() {
         immersionBar.statusBarView(view).init()
 
@@ -67,5 +72,17 @@ class HomeUI:BaseUI(R.layout.activity_home) {
                 showToast("Please open permission in settings")
             }
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if(RefreshAdManager.canRefresh(GoConfig.GO_HOME)){
+            showNativeAd.showAd()
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        showNativeAd.stopShow()
     }
 }

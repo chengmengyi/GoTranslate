@@ -6,10 +6,12 @@ import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.lifecycleScope
 import com.demo.gotranslate.R
+import com.demo.gotranslate.admob.ShowOpenAd
 import com.demo.gotranslate.app.copyResult
 import com.demo.gotranslate.app.showToast
 import com.demo.gotranslate.app.showView
 import com.demo.gotranslate.base.BaseUI
+import com.demo.gotranslate.config.GoConfig
 import com.demo.gotranslate.manager.LanguageManager
 import com.demo.gotranslate.manager.PhotoTranslateManager
 import com.demo.gotranslate.ui.HomeUI
@@ -25,6 +27,8 @@ import kotlinx.android.synthetic.main.activity_take_result.*
 import kotlinx.coroutines.launch
 
 class TakeResultUI:BaseUI(R.layout.activity_take_result) {
+    private val showOpenAd by lazy {  ShowOpenAd(this, GoConfig.GO_TRANSLATE){} }
+
     private val textRecognizer by lazy {
         when(LanguageManager.topLanguage.code){
             "zh" -> TextRecognition.getClient(ChineseTextRecognizerOptions.Builder().build())
@@ -92,6 +96,7 @@ class TakeResultUI:BaseUI(R.layout.activity_take_result) {
                 llc_camera.showView(false)
                 llc_sure.showView(false)
                 tv_result.text=it
+                showOpenAd.showOpenAd {  }
             }
         }
     }
