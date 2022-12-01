@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "917324214150",
+    "project_id": "go-translate-d2db6",
+    "storage_bucket": "go-translate-d2db6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:917324214150:android:18591955da58f696f64607",
+        "android_client_info": {
+          "package_name": "com.txtocr.translator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "917324214150-89vsdm56usa17ucg0gnto9o2nn3bg679.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABox9Sz0PLg2DZ45iu1Iisim2wS7HfagA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "917324214150-89vsdm56usa17ucg0gnto9o2nn3bg679.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
