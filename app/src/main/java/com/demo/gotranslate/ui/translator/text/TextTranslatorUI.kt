@@ -3,6 +3,7 @@ package com.demo.gotranslate.ui.translator.text
 import android.annotation.SuppressLint
 import android.content.Intent
 import com.demo.gotranslate.R
+import com.demo.gotranslate.admob.LoadAdImpl
 import com.demo.gotranslate.admob.RefreshAdManager
 import com.demo.gotranslate.admob.ShowNativeAd
 import com.demo.gotranslate.admob.ShowOpenAd
@@ -109,7 +110,7 @@ class TextTranslatorUI: BaseUI(R.layout.activity_text_translator){
             }else{
                 tv_bottom_content.text=it
                 if (!change){
-                    showOpenAd.showOpenAd {  }
+                    showOpenAd.showOpenAd { LoadAdImpl.loadAd(GoConfig.GO_TRANSLATE) }
                 }
             }
         }

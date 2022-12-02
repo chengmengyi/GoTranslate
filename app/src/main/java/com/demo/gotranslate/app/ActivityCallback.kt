@@ -18,6 +18,7 @@ object ActivityCallback {
     var goFront=true
     private var jumpToMain=false
     private var job: Job?=null
+    var choosePic=false
 
 
     fun register(application: Application){
@@ -53,7 +54,7 @@ object ActivityCallback {
 
     private fun start(activity: Activity){
         goFront=true
-        if (jumpToMain){
+        if (jumpToMain&&!choosePic){
             if (ActivityUtils.isActivityExistsInStack(HomeUI::class.java)){
                 activity.startActivity(Intent(activity, MainUI::class.java))
             }
@@ -63,10 +64,10 @@ object ActivityCallback {
 
     private fun stop(){
         goFront=false
+        RefreshAdManager.reset()
         job= GlobalScope.launch {
             delay(3000L)
             jumpToMain=true
-            RefreshAdManager.reset()
             ActivityUtils.finishActivity(MainUI::class.java)
             ActivityUtils.finishActivity(AdActivity::class.java)
         }

@@ -9,7 +9,6 @@ import java.lang.Exception
 object GoFirebase {
 
     fun readFirebase(){
-        MaxNumManager.readLocalNum()
 
 //        val remoteConfig = Firebase.remoteConfig
 //        remoteConfig.fetchAndActivate().addOnCompleteListener {

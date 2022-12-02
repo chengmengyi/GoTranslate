@@ -6,6 +6,7 @@ import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.lifecycleScope
 import com.demo.gotranslate.R
+import com.demo.gotranslate.admob.LoadAdImpl
 import com.demo.gotranslate.admob.ShowOpenAd
 import com.demo.gotranslate.app.copyResult
 import com.demo.gotranslate.app.showToast
@@ -96,7 +97,7 @@ class TakeResultUI:BaseUI(R.layout.activity_take_result) {
                 llc_camera.showView(false)
                 llc_sure.showView(false)
                 tv_result.text=it
-                showOpenAd.showOpenAd {  }
+                showOpenAd.showOpenAd { LoadAdImpl.loadAd(GoConfig.GO_TRANSLATE) }
             }
         }
     }

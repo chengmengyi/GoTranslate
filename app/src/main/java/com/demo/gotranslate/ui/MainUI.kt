@@ -8,6 +8,7 @@ import androidx.core.animation.doOnEnd
 import com.blankj.utilcode.util.ActivityUtils
 import com.demo.gotranslate.R
 import com.demo.gotranslate.admob.LoadAdImpl
+import com.demo.gotranslate.admob.MaxNumManager
 import com.demo.gotranslate.admob.ShowOpenAd
 import com.demo.gotranslate.base.BaseUI
 import com.demo.gotranslate.config.GoConfig
@@ -18,6 +19,7 @@ class MainUI : BaseUI(R.layout.activity_main) {
     private val showOpenAd by lazy { ShowOpenAd(this,GoConfig.GO_OPEN){ toHomeUI() } }
 
     override fun view() {
+        MaxNumManager.readLocalNum()
         preLoadAd()
         startAnimator()
     }

@@ -14,6 +14,7 @@ import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import com.demo.gotranslate.R
+import com.demo.gotranslate.app.ActivityCallback
 import com.demo.gotranslate.app.logGo
 import com.demo.gotranslate.app.showToast
 import com.demo.gotranslate.base.BaseUI
@@ -27,6 +28,7 @@ import kotlinx.android.synthetic.main.activity_camera.iv_change
 import kotlinx.android.synthetic.main.activity_camera.view
 import kotlinx.android.synthetic.main.activity_text_translator.*
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import java.io.File
@@ -69,6 +71,7 @@ class CameraUI:BaseUI(R.layout.activity_camera) {
             intent = Intent(Intent.ACTION_GET_CONTENT)
             intent.type = "image/*"
         }
+        ActivityCallback.choosePic=true
         startActivityForResult(intent,1000)
     }
 
@@ -82,6 +85,10 @@ class CameraUI:BaseUI(R.layout.activity_camera) {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if(requestCode==1000){
+            GlobalScope.launch {
+                delay(300L)
+                ActivityCallback.choosePic=false
+            }
             if(null!=data?.data){
                 toResultUI(data.data)
             }
