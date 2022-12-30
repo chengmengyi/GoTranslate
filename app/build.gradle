@@ -33,7 +33,6 @@ android {
 }
 
 dependencies {
-    implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.4.2'
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
@@ -42,11 +41,7 @@ dependencies {
     implementation 'com.gyf.immersionbar:immersionbar-ktx:3.0.0'
     implementation("com.blankj:utilcodex:1.31.0")
     implementation("com.tencent:mmkv:1.2.13")
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
-    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.2.0"
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
-
+    implementation "com.airbnb.android:lottie:4.2.2"
 
     implementation 'com.google.mlkit:camera:16.0.0-beta3'
     implementation 'com.google.mlkit:translate:17.0.0'
@@ -61,4 +56,11 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation(platform("com.google.firebase:firebase-bom:29.3.1"))
     implementation("com.google.android.gms:play-services-ads:21.1.0")
+
+    implementation project(':core')
+    implementation 'com.lzy.net:okgo:3.0.4'
+    implementation "com.android.installreferrer:installreferrer:2.2"
+    implementation 'io.github.scwang90:refresh-layout-kernel:2.0.5'
+    implementation 'io.github.scwang90:refresh-header-classics:2.0.5'
+    implementation 'io.github.scwang90:refresh-footer-classics:2.0.5'
 }

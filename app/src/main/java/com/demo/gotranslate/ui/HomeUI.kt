@@ -16,6 +16,7 @@ import com.demo.gotranslate.base.BaseUI
 import com.demo.gotranslate.config.GoConfig
 import com.demo.gotranslate.ui.translator.camera.CameraUI
 import com.demo.gotranslate.ui.translator.text.TextTranslatorUI
+import com.demo.gotranslate.ui.vpn.ConnectVpnUI
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.activity_home_content.*
 import kotlinx.android.synthetic.main.activity_home_drawer.*
@@ -47,6 +48,12 @@ class HomeUI:BaseUI(R.layout.activity_home) {
         }
         llc_web.setOnClickListener { startActivity(Intent(this,WebUI::class.java)) }
         llc_contact.setOnClickListener { openEmail() }
+
+        llc_vpn.setOnClickListener {
+            if(!drawer_layout.isOpen){
+                startActivity(Intent(this,ConnectVpnUI::class.java))
+            }
+        }
     }
 
     private fun toCameraUI(){

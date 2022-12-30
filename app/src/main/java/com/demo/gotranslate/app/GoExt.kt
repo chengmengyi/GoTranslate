@@ -10,11 +10,16 @@ import android.util.DisplayMetrics
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import com.demo.gotranslate.R
 import com.demo.gotranslate.config.GoConfig
 
 
 fun logGo(string: String){
     Log.e("qwer",string)
+}
+
+fun getVpnLogo(coun:String)=when(coun){
+    else-> R.drawable.fast
 }
 
 fun Context.showToast(content:String){
@@ -23,6 +28,10 @@ fun Context.showToast(content:String){
 
 fun View.showView(show:Boolean){
     visibility=if (show) View.VISIBLE else View.GONE
+}
+
+fun View.showViewInvisible(show:Boolean){
+    visibility=if (show) View.VISIBLE else View.INVISIBLE
 }
 
 fun Context.copyResult(content: String){
@@ -79,3 +88,9 @@ fun Context.fit(){
     metrics.scaledDensity = td
     metrics.densityDpi = dpi
 }
+
+fun String.isBuyUser()=contains("fb4a")||
+        contains("gclid")||
+        contains("not%20set")||
+        contains("youtubeads")||
+        contains("%7B%22")

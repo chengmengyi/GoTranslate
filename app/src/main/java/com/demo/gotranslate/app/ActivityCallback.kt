@@ -55,9 +55,9 @@ object ActivityCallback {
     private fun start(activity: Activity){
         goFront=true
         if (jumpToMain&&!choosePic){
-            if (ActivityUtils.isActivityExistsInStack(HomeUI::class.java)){
-                activity.startActivity(Intent(activity, MainUI::class.java))
-            }
+            activity.startActivity(Intent(activity, MainUI::class.java).apply {
+                putExtra("isColdLoad",false)
+            })
         }
         jumpToMain=false
     }

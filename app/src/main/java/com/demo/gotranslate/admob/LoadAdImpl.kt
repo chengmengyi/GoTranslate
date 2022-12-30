@@ -67,4 +67,16 @@ object LoadAdImpl:LoadAd() {
     fun removeResult(key: String){
         result.remove(key)
     }
+
+    fun removeAll(){
+        result.clear()
+        loadingKey.clear()
+        loadAd(GoConfig.GO_OPEN)
+        loadAd(GoConfig.GO_HOME)
+        loadAd(GoConfig.GO_TRANSLATE)
+        loadAd(GoConfig.GO_WRITE_HOME)
+        loadAd(GoConfig.GO_VPN_HOME)
+        loadAd(GoConfig.GO_VPN_RESULT)
+        loadAd(GoConfig.GO_VPN_CONN)
+    }
 }

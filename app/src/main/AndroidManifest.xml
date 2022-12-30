@@ -36,6 +36,14 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".ui.WebUI"
             android:screenOrientation="portrait"/>
+        <activity android:name=".ui.vpn.ConnectVpnUI"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"/>
+        <activity android:name=".ui.vpn.ChooseVpnUI"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.vpn.ResultUI"
+            android:screenOrientation="portrait"/>
+
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="@string/admob_id" />
