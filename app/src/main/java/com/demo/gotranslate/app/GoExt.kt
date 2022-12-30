@@ -12,6 +12,7 @@ import android.view.View
 import android.widget.Toast
 import com.demo.gotranslate.R
 import com.demo.gotranslate.config.GoConfig
+import com.demo.gotranslate.config.GoFirebase
 
 
 fun logGo(string: String){
@@ -20,6 +21,18 @@ fun logGo(string: String){
 
 fun getVpnLogo(coun:String)=when(coun){
     else-> R.drawable.fast
+}
+
+fun checkShowBackAd():Boolean{
+    when(GoFirebase.go_set_backinter){
+        "1"->return true
+        "2"->return GoFirebase.getLocalReferrer().isBuyUser()
+        "3"->{
+            val localReferrer = GoFirebase.getLocalReferrer()
+            return localReferrer.contains("facebook")||localReferrer.contains("fb4a")
+        }
+    }
+    return false
 }
 
 fun Context.showToast(content:String){

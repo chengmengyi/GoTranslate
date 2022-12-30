@@ -14,6 +14,8 @@ object GoConfig {
     const val GO_VPN_RESULT="go_vpn_result"
     const val GO_VPN_CONN="go_vpn_conn"
     const val GO_VPN_BACK="go_vpn_back"
+    const val GO_VPN_RESULT_BACK="go_vpn_resultbackhome"
+    const val GO_VPN_LIST="go_vpn_serlist"
 
     val localCountryList= arrayOf("Japan")
 
@@ -101,7 +103,23 @@ object GoConfig {
             "go_sort": 2
         }
     ],
+      "go_vpn_serlist": [
+        {
+            "go_source": "admob",
+            "go_id": "ca-app-pub-3940256099942544/2247696110",
+            "go_type": "yuansheng",
+            "go_sort": 2
+        }
+    ],
       "go_vpn_conn": [
+        {
+            "go_source": "admob",
+            "go_id": "ca-app-pub-3940256099942544/8691691433",
+            "go_type": "chaping",
+            "go_sort": 2
+        }
+    ],
+     "go_vpn_resultbackhome": [
         {
             "go_source": "admob",
             "go_id": "ca-app-pub-3940256099942544/8691691433",

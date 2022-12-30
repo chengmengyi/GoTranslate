@@ -15,6 +15,7 @@ import com.demo.gotranslate.app.logGo
 import com.demo.gotranslate.base.BaseUI
 import com.demo.gotranslate.config.GoConfig
 import com.demo.gotranslate.config.GoFirebase
+import com.demo.gotranslate.manager.SetPointManager
 import com.demo.gotranslate.ui.dialog.SureCancelDialog
 import com.demo.gotranslate.ui.vpn.ConnectVpnUI
 import com.demo.gotranslate.util.ReloadNativeAdManager
@@ -71,10 +72,12 @@ class MainUI : BaseUI(R.layout.activity_main) {
 
     private fun checkPlan(){
         if (!GoFirebase.getLocalReferrer().isBuyUser()){
+            SetPointManager.setUser("a")
             doLogicPlanA()
             return
         }
         GoFirebase.randomPlan()
+        SetPointManager.setUser(GoFirebase.oa_program.toLowerCase())
         if (ConnectVpnManager.isConnected()){
             toHomeUI()
         }else{
@@ -118,7 +121,7 @@ class MainUI : BaseUI(R.layout.activity_main) {
     }
 
     private fun showVpnDialog(){
-        SureCancelDialog("Turn on vpn to Protect Privacy"){
+        SureCancelDialog("Turn on vpn to Protect Privacy",isVpnDialog = true){
             if (it){
                 doLogicPlanB()
             }else{

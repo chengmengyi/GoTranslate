@@ -25,6 +25,7 @@ object GoFirebase {
     var go_vpn_pop="2"
     var oa_program=""
     var auto_go="1"
+    var go_set_backinter="2"
     var irUser=false
 
 
@@ -55,6 +56,11 @@ object GoFirebase {
 //                val s4=remoteConfig.getString("auto_go")
 //                if (s4.isNotEmpty()){
 //                    auto_go=s4
+//                }
+//
+//                val s5=remoteConfig.getString("go_set_backinter")
+//                if (s5.isNotEmpty()){
+//                    go_set_backinter=s5
 //                }
 //            }
 //        }
