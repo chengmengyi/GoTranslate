@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">GoTranslate</string>
-    <string name="admob_id">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="facebook_app_id">802325727537804</string>
+    <string name="admob_id">ca-app-pub-5072414060315598~6374322809</string>
 </resources>

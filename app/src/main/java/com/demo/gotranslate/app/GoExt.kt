@@ -14,7 +14,7 @@ import com.demo.gotranslate.config.GoConfig
 
 
 fun logGo(string: String){
-    Log.e("qwer",string)
+//    Log.e("qwer",string)
 }
 
 fun Context.showToast(content:String){

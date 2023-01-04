@@ -37,6 +37,10 @@ class ShowOpenAd(
                         result.show(baseUI)
                     }
                 }
+            }else{
+                if(key==GoConfig.GO_TRANSLATE){
+                    next.invoke(false)
+                }
             }
         }
     }

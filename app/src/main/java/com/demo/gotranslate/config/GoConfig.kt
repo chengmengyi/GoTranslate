@@ -1,8 +1,8 @@
 package com.demo.gotranslate.config
 
 object GoConfig {
-    const val EMAIL=""
-    const val WEB=""
+    const val EMAIL="dawdawf743@gmail.com"
+    const val WEB="https://sites.google.com/view/go-translate-/home"
 
     const val GO_OPEN="go_open"
     const val GO_HOME="go_home"
@@ -15,92 +15,33 @@ object GoConfig {
     "go_open": [
         {
             "go_source": "admob",
-            "go_id": "ca-app-pub-3940256099942544/3419835294",
+            "go_id": "ca-app-pub-5072414060315598/1658511736",
             "go_type": "kaiping",
             "go_sort": 1
-        },
-
-{
-
-            "go_source": "admob",
-            "go_id": "ca-app-pub-3940256099942544/1001001001",
-            "go_type": "kaiping",
-            "go_sort": 3
-},
-
-
-
-        {
-            "go_source": "admob",
-            "go_id": "ca-app-pub-3940256099942544/3419835294A",
-            "go_type": "kaiping",
-            "go_sort": 2
         }
     ],
     "go_home": [
         {
             "go_source": "admob",
-            "go_id": "ca-app-pub-3940256099942544/2247696110",
+            "go_id": "ca-app-pub-5072414060315598/8032348391",
             "go_type": "yuansheng",
-            "go_sort": 2
-        },
-        {
-            "go_source": "admob",
-            "go_id": "ca-app-pub-3940256099942544/2247696110A",
-            "go_type": "yuansheng",
-            "go_sort": 3
-        },
-
-    {
-            "go_source": "admob",
-            "go_id": "ca-app-pub-3940256099942544/2247696110A",
-            "go_type": "yuansheng",
-            "go_sort": 2
+            "go_sort": 1
         }
-
-
-
-
     ],
     "go_write_home": [
         {
             "go_source": "admob",
-            "go_id": "ca-app-pub-3940256099942544/2247696110",
+            "go_id": "ca-app-pub-5072414060315598/1570634401",
             "go_type": "yuansheng",
             "go_sort": 1
-        },
-
- {
-            "go_source": "admob",
-            "go_id": "ca-app-pub-3940256099942544/1001001001",
-            "go_type": "yuansheng",
-            "go_sort": 3
-        },
-        {
-            "go_source": "admob",
-            "go_id": "ca-app-pub-3940256099942544/2247696110A",
-            "go_type": "yuansheng",
-            "go_sort": 2
         }
     ],
       "go_translate": [
         {
             "go_source": "admob",
-            "go_id": "ca-app-pub-3940256099942544/8691691433",
-            "go_type": "chaping",
-            "go_sort": 2
-        },
-         {
-            "go_source": "admob",
-            "go_id": "ca-app-pub-3940256099942544/8691691433",
+            "go_id": "ca-app-pub-5072414060315598/6719266726",
             "go_type": "chaping",
             "go_sort": 1
-        },
-         {
-            "go_source": "admob",
-            "go_id": "ca-app-pub-3940256099942544/8691691433A",
-            "go_type": "chaping",
-            "go_sort": 3
         }
     ]
 }"""

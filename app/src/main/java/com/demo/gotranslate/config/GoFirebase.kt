@@ -9,14 +9,12 @@ import java.lang.Exception
 object GoFirebase {
 
     fun readFirebase(){
-        MaxNumManager.readLocalNum()
-
-//        val remoteConfig = Firebase.remoteConfig
-//        remoteConfig.fetchAndActivate().addOnCompleteListener {
-//            if (it.isSuccessful){
-//                parseAdJson(remoteConfig.getString("go_ad"))
-//            }
-//        }
+        val remoteConfig = Firebase.remoteConfig
+        remoteConfig.fetchAndActivate().addOnCompleteListener {
+            if (it.isSuccessful){
+                parseAdJson(remoteConfig.getString("go_ad"))
+            }
+        }
     }
 
     private fun parseAdJson(string: String){
