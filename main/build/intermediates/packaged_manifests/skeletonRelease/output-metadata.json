@@ -1,0 +1,18 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "PACKAGED_MANIFESTS",
+    "kind": "Directory"
+  },
+  "applicationId": "de.blinkt.openvpn",
+  "variantName": "skeletonRelease",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "outputFile": "../../merged_manifest/skeletonRelease/AndroidManifest.xml"
+    }
+  ],
+  "elementType": "File"
+}

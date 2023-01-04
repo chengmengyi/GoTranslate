@@ -1,0 +1,168 @@
+{
+  "buildFiles": [
+    "/Users/chengmengyi/testbird/GoTranslate/main/src/main/cpp/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/Users/chengmengyi/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
+      "-C",
+      "/Users/chengmengyi/testbird/GoTranslate/main/.cxx/RelWithDebInfo/732go3c5/x86_64",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/Users/chengmengyi/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
+    "-C",
+    "/Users/chengmengyi/testbird/GoTranslate/main/.cxx/RelWithDebInfo/732go3c5/x86_64",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "pie_openvpn.x86_64-RelWithDebInfo-x86_64": {
+      "artifactName": "pie_openvpn.x86_64",
+      "buildCommandComponents": [
+        "/Users/chengmengyi/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
+        "-C",
+        "/Users/chengmengyi/testbird/GoTranslate/main/.cxx/RelWithDebInfo/732go3c5/x86_64",
+        "pie_openvpn.x86_64"
+      ],
+      "abi": "x86_64",
+      "output": "/Users/chengmengyi/testbird/GoTranslate/main/build/intermediates/cxx/RelWithDebInfo/732go3c5/obj/x86_64/pie_openvpn.x86_64",
+      "runtimeFiles": [
+        "/Users/chengmengyi/testbird/GoTranslate/main/build/intermediates/cxx/RelWithDebInfo/732go3c5/obj/x86_64/libopenvpn.so"
+      ]
+    },
+    "openvpn-RelWithDebInfo-x86_64": {
+      "artifactName": "openvpn",
+      "buildCommandComponents": [
+        "/Users/chengmengyi/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
+        "-C",
+        "/Users/chengmengyi/testbird/GoTranslate/main/.cxx/RelWithDebInfo/732go3c5/x86_64",
+        "openvpn"
+      ],
+      "abi": "x86_64",
+      "output": "/Users/chengmengyi/testbird/GoTranslate/main/build/intermediates/cxx/RelWithDebInfo/732go3c5/obj/x86_64/libopenvpn.so",
+      "runtimeFiles": []
+    },
+    "ovpnutil-RelWithDebInfo-x86_64": {
+      "artifactName": "ovpnutil",
+      "buildCommandComponents": [
+        "/Users/chengmengyi/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
+        "-C",
+        "/Users/chengmengyi/testbird/GoTranslate/main/.cxx/RelWithDebInfo/732go3c5/x86_64",
+        "ovpnutil"
+      ],
+      "abi": "x86_64",
+      "output": "/Users/chengmengyi/testbird/GoTranslate/main/build/intermediates/cxx/RelWithDebInfo/732go3c5/obj/x86_64/libovpnutil.so",
+      "runtimeFiles": []
+    },
+    "lz4-RelWithDebInfo-x86_64": {
+      "artifactName": "lz4",
+      "buildCommandComponents": [
+        "/Users/chengmengyi/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
+        "-C",
+        "/Users/chengmengyi/testbird/GoTranslate/main/.cxx/RelWithDebInfo/732go3c5/x86_64",
+        "lz4"
+      ],
+      "abi": "x86_64",
+      "output": "/Users/chengmengyi/testbird/GoTranslate/main/.cxx/RelWithDebInfo/732go3c5/x86_64/liblz4.a",
+      "runtimeFiles": []
+    },
+    "crypto-RelWithDebInfo-x86_64": {
+      "artifactName": "crypto",
+      "buildCommandComponents": [
+        "/Users/chengmengyi/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
+        "-C",
+        "/Users/chengmengyi/testbird/GoTranslate/main/.cxx/RelWithDebInfo/732go3c5/x86_64",
+        "crypto"
+      ],
+      "abi": "x86_64",
+      "output": "/Users/chengmengyi/testbird/GoTranslate/main/.cxx/RelWithDebInfo/732go3c5/x86_64/libcrypto.a",
+      "runtimeFiles": []
+    },
+    "lzo-RelWithDebInfo-x86_64": {
+      "artifactName": "lzo",
+      "buildCommandComponents": [
+        "/Users/chengmengyi/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
+        "-C",
+        "/Users/chengmengyi/testbird/GoTranslate/main/.cxx/RelWithDebInfo/732go3c5/x86_64",
+        "lzo"
+      ],
+      "abi": "x86_64",
+      "output": "/Users/chengmengyi/testbird/GoTranslate/main/.cxx/RelWithDebInfo/732go3c5/x86_64/liblzo.a",
+      "runtimeFiles": []
+    },
+    "makeassetdir-RelWithDebInfo-x86_64": {
+      "artifactName": "makeassetdir",
+      "buildCommandComponents": [
+        "/Users/chengmengyi/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
+        "-C",
+        "/Users/chengmengyi/testbird/GoTranslate/main/.cxx/RelWithDebInfo/732go3c5/x86_64",
+        "makeassetdir"
+      ],
+      "abi": "x86_64",
+      "runtimeFiles": []
+    },
+    "libovpnexec.so-RelWithDebInfo-x86_64": {
+      "artifactName": "libovpnexec.so",
+      "buildCommandComponents": [
+        "/Users/chengmengyi/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
+        "-C",
+        "/Users/chengmengyi/testbird/GoTranslate/main/.cxx/RelWithDebInfo/732go3c5/x86_64",
+        "libovpnexec.so"
+      ],
+      "abi": "x86_64",
+      "output": "/Users/chengmengyi/testbird/GoTranslate/main/build/intermediates/cxx/RelWithDebInfo/732go3c5/obj/x86_64/libovpnexec.so",
+      "runtimeFiles": [
+        "/Users/chengmengyi/testbird/GoTranslate/main/build/intermediates/cxx/RelWithDebInfo/732go3c5/obj/x86_64/libopenvpn.so"
+      ]
+    },
+    "osslutil-RelWithDebInfo-x86_64": {
+      "artifactName": "osslutil",
+      "buildCommandComponents": [
+        "/Users/chengmengyi/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
+        "-C",
+        "/Users/chengmengyi/testbird/GoTranslate/main/.cxx/RelWithDebInfo/732go3c5/x86_64",
+        "osslutil"
+      ],
+      "abi": "x86_64",
+      "output": "/Users/chengmengyi/testbird/GoTranslate/main/build/intermediates/cxx/RelWithDebInfo/732go3c5/obj/x86_64/libosslutil.so",
+      "runtimeFiles": []
+    },
+    "ovpn3-RelWithDebInfo-x86_64": {
+      "artifactName": "ovpn3",
+      "buildCommandComponents": [
+        "/Users/chengmengyi/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
+        "-C",
+        "/Users/chengmengyi/testbird/GoTranslate/main/.cxx/RelWithDebInfo/732go3c5/x86_64",
+        "ovpn3"
+      ],
+      "abi": "x86_64",
+      "output": "/Users/chengmengyi/testbird/GoTranslate/main/build/intermediates/cxx/RelWithDebInfo/732go3c5/obj/x86_64/libovpn3.so",
+      "runtimeFiles": []
+    },
+    "osslspeedtest-RelWithDebInfo-x86_64": {
+      "artifactName": "osslspeedtest",
+      "buildCommandComponents": [
+        "/Users/chengmengyi/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
+        "-C",
+        "/Users/chengmengyi/testbird/GoTranslate/main/.cxx/RelWithDebInfo/732go3c5/x86_64",
+        "osslspeedtest"
+      ],
+      "abi": "x86_64",
+      "output": "/Users/chengmengyi/testbird/GoTranslate/main/build/intermediates/cxx/RelWithDebInfo/732go3c5/obj/x86_64/libosslspeedtest.so",
+      "runtimeFiles": []
+    },
+    "ssl-RelWithDebInfo-x86_64": {
+      "artifactName": "ssl",
+      "buildCommandComponents": [
+        "/Users/chengmengyi/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
+        "-C",
+        "/Users/chengmengyi/testbird/GoTranslate/main/.cxx/RelWithDebInfo/732go3c5/x86_64",
+        "ssl"
+      ],
+      "abi": "x86_64",
+      "output": "/Users/chengmengyi/testbird/GoTranslate/main/.cxx/RelWithDebInfo/732go3c5/x86_64/libssl.a",
+      "runtimeFiles": []
+    }
+  }
+}

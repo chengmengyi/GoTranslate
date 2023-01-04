@@ -1,0 +1,9 @@
+/Users/chengmengyi/Library/Android/sdk/cmake/3.18.1/bin/ninja \
+  -C \
+  /Users/chengmengyi/demo/ics-openvpn/main/.cxx/Debug/e4f1f145/arm64-v8a \
+  libovpnexec.so \
+  openvpn \
+  osslspeedtest \
+  osslutil \
+  ovpn3 \
+  ovpnutil

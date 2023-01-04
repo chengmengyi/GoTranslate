@@ -1,0 +1,1 @@
+/Users/chengmengyi/testbird/GoTranslate/main/src/main/cpp/CMakeLists.txt

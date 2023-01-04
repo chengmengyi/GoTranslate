@@ -1,0 +1,43 @@
+{
+    "logs": [
+        {
+            "outputFile": "de.blinkt.openvpn.main-mergeSkeletonDebugResources-6:/values-ja/values-ja.xml",
+            "map": [
+                {
+                    "source": "/Users/chengmengyi/demo/ics-openvpn/main/src/main/res/values-ja/bools.xml",
+                    "from": {
+                        "startLines": "6",
+                        "startColumns": "4",
+                        "startOffsets": "211",
+                        "endColumns": "52",
+                        "endOffsets": "259"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "52",
+                        "endOffsets": "103"
+                    }
+                },
+                {
+                    "source": "/Users/chengmengyi/.gradle/caches/transforms-3/bf5ab8e670861319d1ffe1adb60f9919/transformed/core-1.9.0/res/values-ja/values-ja.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "108",
+                        "endColumns": "100",
+                        "endOffsets": "204"
+                    }
+                }
+            ]
+        }
+    ]
+}

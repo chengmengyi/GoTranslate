@@ -1,0 +1,44 @@
+[
+  {
+    "level_": 0,
+    "message_": "Start JSON generation. Platform version: 19 min SDK version: x86",
+    "file_": "/Users/chengmengyi/testbird/GoTranslate/main/src/main/cpp/CMakeLists.txt",
+    "tag_": "skeletonRelease|x86",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 1666863666
+  },
+  {
+    "level_": 0,
+    "message_": "JSON \u0027/Users/chengmengyi/testbird/GoTranslate/main/.cxx/RelWithDebInfo/732go3c5/x86/android_gradle_build.json\u0027 was up-to-date",
+    "file_": "/Users/chengmengyi/testbird/GoTranslate/main/src/main/cpp/CMakeLists.txt",
+    "tag_": "skeletonRelease|x86",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 815444218
+  },
+  {
+    "level_": 0,
+    "message_": "JSON generation completed without problems",
+    "file_": "/Users/chengmengyi/testbird/GoTranslate/main/src/main/cpp/CMakeLists.txt",
+    "tag_": "skeletonRelease|x86",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": -37498340
+  }
+]
