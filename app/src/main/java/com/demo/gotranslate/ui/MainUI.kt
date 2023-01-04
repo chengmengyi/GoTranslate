@@ -44,6 +44,7 @@ class MainUI : BaseUI(R.layout.activity_main) {
         LoadAdImpl.loadAd(GoConfig.GO_VPN_HOME)
         LoadAdImpl.loadAd(GoConfig.GO_VPN_RESULT)
         LoadAdImpl.loadAd(GoConfig.GO_VPN_CONN)
+        LoadAdImpl.loadAd(GoConfig.GO_VPN_LIST)
     }
 
     private fun startAnimator(){
@@ -91,11 +92,11 @@ class MainUI : BaseUI(R.layout.activity_main) {
 
     private fun doLogicPlanA(){
         if (GoFirebase.go_vpn_pop=="1"&&ConnectVpnManager.isStopped()&&checkCanShowVpnDialog()){
-            showVpnDialog()
+            toHomeUI(showDialog = true)
             return
         }
         if (GoFirebase.go_vpn_pop=="2"&&isColdLoad&&ConnectVpnManager.isStopped()&&checkCanShowVpnDialog()){
-            showVpnDialog()
+            toHomeUI(showDialog = true)
             return
         }
         toHomeUI()
@@ -120,21 +121,20 @@ class MainUI : BaseUI(R.layout.activity_main) {
         return false
     }
 
-    private fun showVpnDialog(){
-        SureCancelDialog("Turn on vpn to Protect Privacy",isVpnDialog = true){
-            if (it){
-                doLogicPlanB()
-            }else{
-                toHomeUI()
-            }
-        }.show(supportFragmentManager,"SureCancelDialog")
-    }
+//    private fun showVpnDialog(){
+//        SureCancelDialog("Turn on vpn to Protect Privacy",isVpnDialog = true){
+//            if (it){
+//                doLogicPlanB()
+//            }else{
+//                toHomeUI()
+//            }
+//        }.show(supportFragmentManager,"SureCancelDialog")
+//    }
 
-    private fun toHomeUI(){
-        val activityExistsInStack = ActivityUtils.isActivityExistsInStack(HomeUI::class.java)
-        if (!activityExistsInStack){
-            startActivity(Intent(this,HomeUI::class.java))
-        }
+    private fun toHomeUI(showDialog:Boolean=false){
+        startActivity(Intent(this,HomeUI::class.java).apply {
+            putExtra("showDialog",showDialog)
+        })
         finish()
     }
 

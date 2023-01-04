@@ -14,9 +14,11 @@ import com.demo.gotranslate.app.openEmail
 import com.demo.gotranslate.app.showToast
 import com.demo.gotranslate.base.BaseUI
 import com.demo.gotranslate.config.GoConfig
+import com.demo.gotranslate.ui.dialog.SureCancelDialog
 import com.demo.gotranslate.ui.translator.camera.CameraUI
 import com.demo.gotranslate.ui.translator.text.TextTranslatorUI
 import com.demo.gotranslate.ui.vpn.ConnectVpnUI
+import com.tencent.mmkv.MMKV
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.activity_home_content.*
 import kotlinx.android.synthetic.main.activity_home_drawer.*
@@ -53,6 +55,25 @@ class HomeUI:BaseUI(R.layout.activity_home) {
             if(!drawer_layout.isOpen){
                 startActivity(Intent(this,ConnectVpnUI::class.java))
             }
+        }
+        checkShowDialog(intent)
+    }
+
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+        intent?.let { checkShowDialog(it) }
+    }
+
+    private fun checkShowDialog(intent:Intent){
+        if (intent.getBooleanExtra("showDialog",false)){
+            SureCancelDialog("Turn on vpn to Protect Privacy",isVpnDialog = true){
+                if (it){
+                    startActivity(Intent(this,ConnectVpnUI::class.java).apply {
+                        putExtra("auto",true)
+                    })
+                    finish()
+                }
+            }.show(supportFragmentManager,"SureCancelDialog")
         }
     }
 

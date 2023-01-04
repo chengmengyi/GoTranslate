@@ -17,7 +17,7 @@ object GoConfig {
     const val GO_VPN_RESULT_BACK="go_vpn_resultbackhome"
     const val GO_VPN_LIST="go_vpn_serlist"
 
-    val localCountryList= arrayOf("Japan")
+    val localCountryList= arrayOf("UnitedStates")
 
     val localVpnList=arrayListOf(
         VpnBean(
@@ -26,31 +26,35 @@ object GoConfig {
             go_s_password = "123456",
             go_s_coun = "Japan",
             go_s_city = "Tokyo1",
-            go_s_ip = "100.223.52.0"
+            go_s_num = 1,
+            go_s_ip = "11.11.11.11"
         ),
         VpnBean(
             go_s_account = "chacha20-ietf-poly1305",
             go_s_port = 100,
+            go_s_num = 100,
             go_s_password = "123456",
             go_s_coun = "Japan",
             go_s_city = "Tokyo2",
-            go_s_ip = "100.223.52.0"
+            go_s_ip = "22.22.22.222"
         ),
         VpnBean(
             go_s_account = "chacha20-ietf-poly1305",
             go_s_port = 100,
+            go_s_num = 100,
             go_s_password = "123456",
             go_s_coun = "Japan",
             go_s_city = "Tokyo3",
-            go_s_ip = "100.223.52.0"
+            go_s_ip = "34.213.33.78"
         ),
         VpnBean(
             go_s_account = "chacha20-ietf-poly1305",
-            go_s_port = 100,
+            go_s_port = 443,
+            go_s_num = 443,
             go_s_password = "123456",
             go_s_coun = "UnitedStates",
-            go_s_city = "Tokyo",
-            go_s_ip = "100.223.52.78"
+            go_s_city = "NewYork",
+            go_s_ip = "34.213.33.79"
         ),
     )
 

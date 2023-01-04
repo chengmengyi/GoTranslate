@@ -71,6 +71,7 @@
         android:layout_width="246dp"
         android:layout_height="259dp"
         app:lottie_loop="true"
+        app:lottie_autoPlay="true"
         android:visibility="gone"
         android:layout_marginTop="10dp"
         app:lottie_fileName="connect.zip"
@@ -111,6 +112,55 @@
         app:layout_constraintRight_toRightOf="@id/iv_connect_btn"
         app:layout_constraintBottom_toBottomOf="@id/iv_connect_btn"
         />
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="12dp"
+        android:gravity="center_vertical"
+        android:background="@drawable/bg_fa672e_4dp"
+        app:layout_constraintTop_toBottomOf="@id/iv_connect_btn">
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/iv_connect_type_auto"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:text="AUTO"
+            android:textStyle="bold"
+            android:textColor="@drawable/connect_type_color_selector"
+            />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="16dp"
+            android:background="#D3D7E0"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/iv_connect_type_open"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:text="OpenVpn(UDP)"
+            android:textStyle="bold"
+            android:textColor="@drawable/connect_type_color_selector"
+            />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="16dp"
+            android:background="#D3D7E0"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/iv_connect_type_ss"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:text="SS"
+            android:textStyle="bold"
+            android:textColor="@drawable/connect_type_color_selector"
+            />
+    </androidx.appcompat.widget.LinearLayoutCompat>
     <include
         android:layout_width="match_parent"
         android:layout_height="152dp"

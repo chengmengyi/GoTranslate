@@ -2,27 +2,31 @@
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_layout"
     android:layout_width="match_parent"
-    android:layout_height="102dp"
+    android:layout_height="55dp"
     android:gravity="center"
-    android:orientation="vertical"
-    android:layout_marginTop="8dp"
-    android:layout_marginLeft="4dp"
-    android:layout_marginRight="4dp"
-    android:background="@drawable/item_bg">
+    android:paddingLeft="12dp"
+    android:orientation="horizontal"
+    android:layout_marginTop="12dp"
+    android:layout_marginLeft="28dp"
+    android:layout_marginRight="28dp"
+    android:background="@drawable/vpn_item_selector">
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/iv_vpn_logo"
-        android:layout_width="36dp"
-        android:layout_height="36dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:src="@drawable/fast"/>
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_vpn_name"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:textSize="12sp"
         android:ellipsize="end"
         android:singleLine="true"
         android:textColor="#2E373F"
         android:text="Smart Server"
-        android:layout_marginTop="10dp" />
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"/>
 </androidx.appcompat.widget.LinearLayoutCompat>

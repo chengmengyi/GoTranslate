@@ -21,6 +21,7 @@ class ResultUI:BaseUI(R.layout.activity_result), IConnectTimeCallback {
 
     override fun view() {
         immersionBar.statusBarView(top).init()
+        LoadAdImpl.loadAd(GoConfig.GO_VPN_RESULT_BACK)
         connect=intent.getBooleanExtra("connect",false)
         if (!connect){
             iv_title.setImageResource(R.drawable.result2)
@@ -39,7 +40,7 @@ class ResultUI:BaseUI(R.layout.activity_result), IConnectTimeCallback {
             tv_vpn_name.text=lastVpn.go_s_coun
             iv_vpn_logo.setImageResource(getVpnLogo(lastVpn.go_s_coun))
         }
-        iv_back.setOnClickListener { finish() }
+        iv_back.setOnClickListener { onBackPressed() }
     }
 
     override fun onResume() {

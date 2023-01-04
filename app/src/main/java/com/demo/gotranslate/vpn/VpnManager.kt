@@ -6,11 +6,11 @@ import com.demo.gotranslate.config.GoConfig
 import com.demo.gotranslate.config.GoFirebase
 
 object VpnManager {
-    lateinit var smartVpnBean: VpnBean
+    var smartVpnBean=VpnBean()
     val otherVpnList = arrayListOf<VpnBean>()
 
     fun createSmartVpn(){
-        smartVpnBean = if (GoFirebase.countryList.isNotEmpty()&&GoFirebase.vpnList.isNotEmpty()){
+        val smartVpnBean = if (GoFirebase.countryList.isNotEmpty()&&GoFirebase.vpnList.isNotEmpty()){
             val filter = GoFirebase.vpnList.filter { GoFirebase.countryList.contains(it.go_s_coun) }
             if (filter.isEmpty()){
                 GoFirebase.vpnList.random()
@@ -25,7 +25,15 @@ object VpnManager {
                 filter.random()
             }
         }
-        smartVpnBean.isSmart=true
+        this.smartVpnBean.go_s_account=smartVpnBean.go_s_account
+        this.smartVpnBean.go_s_port=smartVpnBean.go_s_port
+        this.smartVpnBean.go_s_num=smartVpnBean.go_s_num
+        this.smartVpnBean.go_s_password=smartVpnBean.go_s_password
+        this.smartVpnBean.go_s_coun=smartVpnBean.go_s_coun
+        this.smartVpnBean.go_s_city=smartVpnBean.go_s_city
+        this.smartVpnBean.go_s_ip=smartVpnBean.go_s_ip
+        this.smartVpnBean.isSmart=true
+        refreshOtherVpnList()
     }
 
     fun refreshOtherVpnList(){
@@ -57,6 +65,6 @@ object VpnManager {
         }
         otherVpnList.clear()
         otherVpnList.addAll(otherList)
-        otherVpnList.forEach { logGo(it.toString()) }
+//        otherVpnList.forEach { logGo(it.toString()) }
     }
 }

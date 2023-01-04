@@ -57,7 +57,10 @@ class ShowNativeAd(
         viewNative.callToActionView=baseUI.findViewById(R.id.native_action)
         (viewNative.callToActionView as AppCompatTextView).text= result.callToAction
 
-        if(key==GoConfig.GO_HOME){
+        if(key==GoConfig.GO_HOME||
+            key==GoConfig.GO_VPN_HOME||
+            key==GoConfig.GO_VPN_RESULT||
+            key==GoConfig.GO_VPN_LIST){
             viewNative.mediaView=baseUI.findViewById(R.id.native_cover)
             result.mediaContent?.let {
                 viewNative.mediaView?.apply {

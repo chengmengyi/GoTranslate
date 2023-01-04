@@ -21,12 +21,13 @@ import kotlin.collections.ArrayList
 object GoFirebase {
     val countryList= arrayListOf<String>()
     val vpnList= arrayListOf<VpnBean>()
-    var go_re="1"
+    var go_re="2"
     var go_vpn_pop="2"
     var oa_program=""
     var auto_go="1"
     var go_set_backinter="2"
     var irUser=false
+    var connectType=1 //1 auto 2open 3ss
 
 
     fun readFirebase(){
@@ -102,6 +103,7 @@ object GoFirebase {
                 vpnList.add(VpnBean(
                     jsonObject.optString("go_s_account"),
                     jsonObject.optInt("go_s_port"),
+                    jsonObject.optInt("go_s_num"),
                     jsonObject.optString("go_s_password"),
                     jsonObject.optString("go_s_coun"),
                     jsonObject.optString("go_s_city"),

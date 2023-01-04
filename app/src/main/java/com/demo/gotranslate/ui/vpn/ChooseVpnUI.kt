@@ -2,6 +2,7 @@ package com.demo.gotranslate.ui.vpn
 
 import android.content.Intent
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.demo.gotranslate.R
 import com.demo.gotranslate.adapter.VpnListAdapter
 import com.demo.gotranslate.admob.LoadAdImpl
@@ -31,12 +32,10 @@ class ChooseVpnUI:BaseUI(R.layout.activity_choose_vpn), OnRefreshListener {
         immersionBar.statusBarView(top).init()
 
         rv_list.apply {
-            layoutManager=GridLayoutManager(this@ChooseVpnUI,3)
+            layoutManager=LinearLayoutManager(this@ChooseVpnUI)
             adapter=vpnAdapter
         }
-        if(VpnManager.otherVpnList.isEmpty()){
-            VpnManager.refreshOtherVpnList()
-        }
+
         updateList()
         refresh_layout.setOnRefreshListener(this)
         LoadAdImpl.loadAd(GoConfig.GO_VPN_BACK)
@@ -46,23 +45,40 @@ class ChooseVpnUI:BaseUI(R.layout.activity_choose_vpn), OnRefreshListener {
     private fun click(vpnBean: VpnBean){
         val connected = ConnectVpnManager.isConnected()
         val currentVpn = ConnectVpnManager.currentVpn
-        if (connected&&currentVpn?.go_s_ip==vpnBean.go_s_ip){
-            SureCancelDialog("do you confirm to reconnect?"){
-                if (it){
-                    chooseBack("disconnect",vpnBean)
+        if (connected){
+            if(currentVpn?.isSmart==true){
+                if (!vpnBean.isSmart){
+                    showDisconnectDialog(vpnBean)
+                }else{
+                    chooseBack("",vpnBean)
                 }
-            }.show(supportFragmentManager,"SureCancelDialog")
-        }else{
-            if (connected){
-                chooseBack("",vpnBean)
             }else{
-                chooseBack("connect",vpnBean)
+                if (vpnBean.isSmart){
+                    showDisconnectDialog(vpnBean)
+                }else{
+                    if (currentVpn?.go_s_ip!=vpnBean.go_s_ip){
+                        showDisconnectDialog(vpnBean)
+                    }else{
+                        chooseBack("",vpnBean)
+                    }
+                }
             }
+        }else{
+            chooseBack("connect",vpnBean)
         }
+    }
+
+    private fun showDisconnectDialog(vpnBean: VpnBean){
+        SureCancelDialog("do you confirm to reconnect?"){
+            if (it){
+                chooseBack("disconnect",vpnBean)
+            }
+        }.show(supportFragmentManager,"SureCancelDialog")
     }
 
     private fun chooseBack(action:String,vpnBean: VpnBean){
         ConnectVpnManager.currentVpn=vpnBean
+        logGo("=chooseBack=${ConnectVpnManager.currentVpn?.toString()}=")
         setResult(1228, Intent().apply {
             putExtra("action",action)
         })
@@ -100,7 +116,7 @@ class ChooseVpnUI:BaseUI(R.layout.activity_choose_vpn), OnRefreshListener {
 
     override fun onResume() {
         super.onResume()
-        if(ReloadNativeAdManager.canReload(GoConfig.GO_VPN_LIST)&& checkShowBackAd()){
+        if(ReloadNativeAdManager.canReload(GoConfig.GO_VPN_LIST)){
             showNativeAd.showAd()
         }
     }

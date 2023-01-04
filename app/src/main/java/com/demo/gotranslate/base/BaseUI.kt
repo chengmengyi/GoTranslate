@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.DisplayMetrics
 import androidx.appcompat.app.AppCompatActivity
 import com.demo.gotranslate.app.fit
+import com.demo.gotranslate.app.logGo
 import com.gyf.immersionbar.ImmersionBar
 
 abstract class BaseUI(private val id:Int):AppCompatActivity() {

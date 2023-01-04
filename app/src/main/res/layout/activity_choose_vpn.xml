@@ -40,8 +40,6 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:srlEnableLoadMore="false"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
         app:layout_constraintBottom_toTopOf="@id/bottom"
         app:layout_constraintTop_toBottomOf="@id/iv_back">
         <com.scwang.smart.refresh.header.ClassicsHeader

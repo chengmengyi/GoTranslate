@@ -1,2 +1,2 @@
 rootProject.name = "GoTranslate"
-include (":app",":core")
+include (":app",":core",":main")

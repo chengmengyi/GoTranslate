@@ -1,9 +1,13 @@
 package com.demo.gotranslate.ui.vpn
 
+import android.content.ComponentName
 import android.content.Intent
+import android.content.ServiceConnection
 import android.net.VpnService
+import android.os.IBinder
 import com.airbnb.lottie.LottieDrawable
 import com.blankj.utilcode.util.ActivityUtils
+import com.blankj.utilcode.util.ServiceUtils
 import com.demo.gotranslate.R
 import com.demo.gotranslate.admob.LoadAdImpl
 import com.demo.gotranslate.admob.ShowNativeAd
@@ -20,6 +24,9 @@ import com.demo.gotranslate.util.ReloadNativeAdManager
 import com.demo.gotranslate.vpn.ConnectVpnManager
 import com.demo.gotranslate.vpn.VpnManager
 import com.github.shadowsocks.utils.StartService
+import de.blinkt.openvpn.api.ExternalOpenVPNService
+import de.blinkt.openvpn.api.IOpenVPNAPIService
+import de.blinkt.openvpn.api.IOpenVPNStatusCallback
 import kotlinx.android.synthetic.main.activity_connect_vpn.*
 import kotlinx.android.synthetic.main.activity_connect_vpn.top
 import kotlinx.coroutines.*
@@ -54,6 +61,9 @@ class ConnectVpnUI:BaseUI(R.layout.activity_connect_vpn), IConnectCallback {
         }
         updateVpnInfo()
         ConnectVpnManager.onInit(this,this)
+        if (ConnectVpnManager.isConnected()){
+            updateConnectedUI()
+        }
 
         if(GoFirebase.irUser){
             SureCancelDialog("The current country does not support vpn services due to policy reasons. You can continue to use the translate function"){
@@ -84,10 +94,22 @@ class ConnectVpnUI:BaseUI(R.layout.activity_connect_vpn), IConnectCallback {
         }
 
         iv_connect_btn.setOnClickListener {
+//            updateConnectingUI()
             clickConnectBtn()
         }
+        iv_connect_idle.setOnClickListener { iv_connect_btn.performClick() }
 
         iv_back.setOnClickListener { onBackPressed() }
+        iv_connect_type_auto.setOnClickListener {
+            updateConnectType(1)
+        }
+        iv_connect_type_open.setOnClickListener {
+            updateConnectType(2)
+        }
+        iv_connect_type_ss.setOnClickListener {
+            updateConnectType(3)
+        }
+        updateConnectType(GoFirebase.connectType,true)
     }
 
     private fun clickConnectBtn(){
@@ -152,6 +174,7 @@ class ConnectVpnUI:BaseUI(R.layout.activity_connect_vpn), IConnectCallback {
 
                 if (time >= 10) {
                     cancel()
+                    connectOrStopComplete()
                 }
             }
         }
@@ -208,8 +231,6 @@ class ConnectVpnUI:BaseUI(R.layout.activity_connect_vpn), IConnectCallback {
     private fun updateConnectingUI(){
         lottie_view.showView(true)
         btn_lottie_view.showView(true)
-        lottie_view.repeatMode = LottieDrawable.RESTART
-        lottie_view.playAnimation()
         iv_connect_idle.showViewInvisible(false)
         iv_connect_btn.setImageResource(R.drawable.btn_connecting)
         tv_connect_status.text="Status: Connecting"
@@ -218,8 +239,6 @@ class ConnectVpnUI:BaseUI(R.layout.activity_connect_vpn), IConnectCallback {
     private fun updateStoppingUI(){
         lottie_view.showView(true)
         btn_lottie_view.showView(true)
-        lottie_view.repeatMode = LottieDrawable.REVERSE
-        lottie_view.playAnimation()
         iv_connect_idle.showViewInvisible(false)
         iv_connect_btn.setImageResource(R.drawable.btn_stopping)
         tv_connect_status.text="Status: Stopping"
@@ -239,6 +258,41 @@ class ConnectVpnUI:BaseUI(R.layout.activity_connect_vpn), IConnectCallback {
         iv_connect_idle.showViewInvisible(true)
         iv_connect_btn.setImageResource(R.drawable.btn_connected)
         tv_connect_status.text="Status: Connected"
+    }
+
+    private fun updateConnectType(type:Int,noLimit:Boolean=false){
+        if (!noLimit){
+            if (!click){
+                return
+            }
+            if(ConnectVpnManager.isConnected()){
+                SureCancelDialog("Switching the connection mode will disconnect the current connection whether to continue"){
+                    if (it){
+                        clickConnectBtn()
+                    }
+                }.show(supportFragmentManager,"SureCancelDialog")
+                return
+            }
+        }
+        GoFirebase.connectType=type
+        when(GoFirebase.connectType){
+            1->{
+                iv_connect_type_auto.isSelected=true
+                iv_connect_type_open.isSelected=false
+                iv_connect_type_ss.isSelected=false
+            }
+            2->{
+                iv_connect_type_auto.isSelected=false
+                iv_connect_type_open.isSelected=true
+                iv_connect_type_ss.isSelected=false
+            }
+            3->{
+                iv_connect_type_auto.isSelected=false
+                iv_connect_type_open.isSelected=false
+                iv_connect_type_ss.isSelected=true
+            }
+        }
+
     }
 
     override fun connectSuccess() {
