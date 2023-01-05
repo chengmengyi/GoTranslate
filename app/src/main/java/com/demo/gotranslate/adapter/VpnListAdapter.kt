@@ -32,11 +32,11 @@ class VpnListAdapter(
             val vpnBean = list[position]
             item_layout.isSelected=false
             if(position==0){
-                tv_vpn_name.text="Auto:\n${vpnBean.go_s_city}"
+                tv_vpn_name.text="Auto:${vpnBean.go_s_coun} - ${vpnBean.go_s_city} - ${vpnBean.go_s_num}"
                 iv_vpn_logo.setImageResource(R.drawable.fast)
                 item_layout.isSelected=ConnectVpnManager.currentVpn?.isSmart==true
             }else{
-                tv_vpn_name.text=vpnBean.go_s_coun
+                tv_vpn_name.text="${vpnBean.go_s_coun} - ${vpnBean.go_s_city} - ${vpnBean.go_s_num}"
                 iv_vpn_logo.setImageResource(getVpnLogo(vpnBean.go_s_coun))
                 if(ConnectVpnManager.currentVpn?.isSmart!=true){
                     item_layout.isSelected=ConnectVpnManager.currentVpn?.go_s_ip==vpnBean.go_s_ip

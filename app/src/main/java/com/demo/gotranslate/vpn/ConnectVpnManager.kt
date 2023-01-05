@@ -135,6 +135,7 @@ object ConnectVpnManager: ShadowsocksConnection.Callback {
 
                 }else{
                     connectOpenVon(mService!!)
+                    ConnectTimeManager.reset()
                 }
             }
             3->{

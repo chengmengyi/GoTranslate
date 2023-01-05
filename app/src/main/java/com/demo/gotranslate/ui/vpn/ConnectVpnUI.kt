@@ -219,10 +219,10 @@ class ConnectVpnUI:BaseUI(R.layout.activity_connect_vpn), IConnectCallback {
         val currentVpn = ConnectVpnManager.currentVpn
         if (null!=currentVpn){
             if (currentVpn.isSmart){
-                tv_vpn_name.text="Smart Server"
+                tv_vpn_name.text="Auto:${currentVpn.go_s_coun} - ${currentVpn.go_s_city} - ${currentVpn.go_s_num}"
                 iv_vpn_logo.setImageResource(R.drawable.fast)
             }else{
-                tv_vpn_name.text=currentVpn.go_s_coun
+                tv_vpn_name.text="${currentVpn.go_s_coun} - ${currentVpn.go_s_city} - ${currentVpn.go_s_num}"
                 iv_vpn_logo.setImageResource(getVpnLogo(currentVpn.go_s_coun))
             }
         }
