@@ -4,10 +4,8 @@ import com.android.installreferrer.api.InstallReferrerClient
 import com.android.installreferrer.api.InstallReferrerStateListener
 import com.demo.gotranslate.admob.MaxNumManager
 import com.demo.gotranslate.app.goApp
-import com.demo.gotranslate.app.logGo
+import com.demo.gotranslate.app.str2Int
 import com.demo.gotranslate.bean.VpnBean
-import com.google.firebase.ktx.Firebase
-import com.google.firebase.remoteconfig.ktx.remoteConfig
 import com.lzy.okgo.OkGo
 import com.lzy.okgo.callback.StringCallback
 import com.lzy.okgo.model.Response
@@ -24,6 +22,7 @@ object GoFirebase {
     var go_re="2"
     var go_vpn_pop="2"
     var oa_program=""
+    var planType=""
     var auto_go="1"
     var go_set_backinter="2"
     var irUser=false
@@ -160,14 +159,12 @@ object GoFirebase {
     fun getLocalReferrer()= MMKV.defaultMMKV().decodeString("go_referrer", "")?:""
 
     fun randomPlan(){
-        if(oa_program.isEmpty()){
-            val oa_program = MMKV.defaultMMKV().decodeString("oa_program") ?: ""
-            if (oa_program.isEmpty()){
-                val nextInt = Random().nextInt(100)
-                this.oa_program=if (nextInt>20) "B" else "A"
-                MMKV.defaultMMKV().encode("oa_program",oa_program)
+        if(planType.isEmpty()){
+            val nextInt = Random().nextInt(100)
+            planType = if (oa_program.isEmpty()){
+                if (80>=nextInt) "B" else "A"
             }else{
-                this.oa_program=oa_program
+                if (str2Int(oa_program)>=nextInt) "B" else "A"
             }
         }
     }

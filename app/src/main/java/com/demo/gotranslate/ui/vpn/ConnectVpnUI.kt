@@ -1,13 +1,8 @@
 package com.demo.gotranslate.ui.vpn
 
-import android.content.ComponentName
 import android.content.Intent
-import android.content.ServiceConnection
 import android.net.VpnService
-import android.os.IBinder
-import com.airbnb.lottie.LottieDrawable
 import com.blankj.utilcode.util.ActivityUtils
-import com.blankj.utilcode.util.ServiceUtils
 import com.demo.gotranslate.R
 import com.demo.gotranslate.admob.LoadAdImpl
 import com.demo.gotranslate.admob.ShowNativeAd
@@ -24,9 +19,6 @@ import com.demo.gotranslate.util.ReloadNativeAdManager
 import com.demo.gotranslate.vpn.ConnectVpnManager
 import com.demo.gotranslate.vpn.VpnManager
 import com.github.shadowsocks.utils.StartService
-import de.blinkt.openvpn.api.ExternalOpenVPNService
-import de.blinkt.openvpn.api.IOpenVPNAPIService
-import de.blinkt.openvpn.api.IOpenVPNStatusCallback
 import kotlinx.android.synthetic.main.activity_connect_vpn.*
 import kotlinx.android.synthetic.main.activity_connect_vpn.top
 import kotlinx.coroutines.*
@@ -187,7 +179,7 @@ class ConnectVpnUI:BaseUI(R.layout.activity_connect_vpn), IConnectCallback {
             if (connect){
                 SetPointManager.point("cute_vpnsucc")
                 updateConnectedUI()
-                if (autoConnect&&GoFirebase.oa_program=="B"){
+                if (autoConnect&&GoFirebase.planType=="B"){
                     LoadAdImpl.removeAll()
                 }
             }else{

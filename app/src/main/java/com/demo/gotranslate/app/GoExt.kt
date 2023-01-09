@@ -35,6 +35,15 @@ fun checkShowBackAd():Boolean{
     return false
 }
 
+fun str2Int(string: String):Int{
+    try {
+        return string.toInt()
+    }catch (e:Exception){
+
+    }
+    return 0
+}
+
 fun Context.showToast(content:String){
     Toast.makeText(this,content,Toast.LENGTH_SHORT).show()
 }
